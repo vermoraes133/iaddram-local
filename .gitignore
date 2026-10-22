@@ -10,3 +10,4 @@ coverage/
 CLAUDE.md
 .iaddram.json
 .claude/
+lefthook-local.yml

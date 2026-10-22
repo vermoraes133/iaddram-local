@@ -1,8 +1,9 @@
 # Security
 
 Do not attach credentials, real memory archives or private project content to
-public issues. After repository publication, report vulnerabilities through
-GitHub private vulnerability reporting when enabled by the maintainer.
+public issues. Report vulnerabilities privately through GitHub:
+<https://github.com/vermoraes133/iaddram-local/security/advisories/new>.
+Supported version: the latest 0.1.x preview.
 
 This preview protects memory content at rest and isolates each MCP process to
 its configured project. Any process with access to your OS account and unlocked

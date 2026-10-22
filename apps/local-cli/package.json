@@ -30,5 +30,14 @@
   "devDependencies": {
     "@types/proper-lockfile": "4.1.4",
     "@modelcontextprotocol/client": "2.3.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vermoraes133/iaddram-local.git",
+    "directory": "apps/local-cli"
+  },
+  "bugs": {
+    "url": "https://github.com/vermoraes133/iaddram-local/issues"
+  },
+  "homepage": "https://github.com/vermoraes133/iaddram-local#readme"
 }

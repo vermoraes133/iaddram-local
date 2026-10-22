@@ -22,5 +22,14 @@
   },
   "devDependencies": {
     "@types/proper-lockfile": "4.1.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vermoraes133/iaddram-local.git",
+    "directory": "packages/storage-pglite"
+  },
+  "bugs": {
+    "url": "https://github.com/vermoraes133/iaddram-local/issues"
+  },
+  "homepage": "https://github.com/vermoraes133/iaddram-local#readme"
 }

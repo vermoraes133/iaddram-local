@@ -20,5 +20,13 @@
     "typescript": "^5.0.0",
     "vitest": "4.1.11",
     "esbuild": "0.28.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vermoraes133/iaddram-local.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vermoraes133/iaddram-local/issues"
+  },
+  "homepage": "https://github.com/vermoraes133/iaddram-local#readme"
 }

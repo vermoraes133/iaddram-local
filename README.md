@@ -13,7 +13,7 @@ Persistent, encrypted memory for AI agents on your own computer. Share useful
 checkpoints between compatible MCP clients without a database service, Docker,
 an IADDRAM account or a hosted API.
 
-Early preview: 0.1.0. Registry and GitHub publication have not happened yet.
+Early preview: 0.1.0. Not yet published to the NPM registry; install from a release tarball or from source.
 
 ## Install and run
 

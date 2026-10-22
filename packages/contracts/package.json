@@ -18,5 +18,14 @@
   "dependencies": {
     "zod": "^4.0.0"
   },
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vermoraes133/iaddram-local.git",
+    "directory": "packages/contracts"
+  },
+  "bugs": {
+    "url": "https://github.com/vermoraes133/iaddram-local/issues"
+  },
+  "homepage": "https://github.com/vermoraes133/iaddram-local#readme"
 }
