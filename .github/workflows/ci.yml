@@ -1,0 +1,9 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+# Sem remote GitHub por enquanto: os gates bloqueantes vivem no lefthook
+# (gitleaks no pre-commit; check e audit no pre-push). Ativar quando houver
+# publicação no GitHub.
+jobs: {}

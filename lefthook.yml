@@ -1,0 +1,23 @@
+pre-commit:
+  commands:
+    gitleaks:
+      run: gitleaks git --pre-commit --staged --redact --no-banner
+pre-push:
+  commands:
+    quality:
+      run: corepack pnpm check
+    dependencies:
+      run: corepack pnpm audit --audit-level high
+post-commit:
+  commands:
+    push-to-bare:
+      run: |
+        saida=$(git push origin "$(git branch --show-current)" 2>&1)
+        if [ $? -eq 0 ]; then
+          echo "pushed to bare"
+        elif echo "$saida" | grep -qE 'rejected|non-fast-forward|fetch first'; then
+          echo "push REJEITADO: o bare tem commits que você não tem."
+          echo "   git fetch origin && git merge origin/$(git branch --show-current)"
+        else
+          echo "push to bare falhou (VPS off?) — push manualmente quando voltar"
+        fi
