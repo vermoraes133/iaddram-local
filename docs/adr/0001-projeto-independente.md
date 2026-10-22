@@ -6,7 +6,7 @@ Data: 2026-10-18. Estado: aceito para separação local.
 
 A edição Local passa a ter diretório, repositório Git, lockfile, documentação e
 ciclo de build/teste/empacotamento próprios. Sua versão inicial permanece 0.1.0.
-O usuário solicitou separar os projetos. Publicação GitHub/NPM permanece pendente.
+O usuário solicitou separar os projetos. O repositório foi publicado no GitHub em 2026-10-22; NPM permanece pendente.
 
 A extração usa os quatro pacotes da distribuição pública previamente preparada:
 contracts, memory-kernel, storage-pglite e local-cli. Eles são fontes internas
