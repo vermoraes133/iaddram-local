@@ -16,7 +16,7 @@
     "check": "corepack pnpm build && corepack pnpm typecheck && corepack pnpm test"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
+    "@types/node": "^26.6.5",
     "typescript": "^5.0.0",
     "vitest": "4.1.11",
     "esbuild": "0.28.2"
