@@ -1,4 +1,5 @@
 version: 2
+# npm: o pnpm exige procedência (trustPolicy); undici-types@6.21.0 está em trustPolicyExclude.
 updates:
   - package-ecosystem: npm
     directory: /
