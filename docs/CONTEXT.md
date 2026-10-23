@@ -6,7 +6,7 @@ Atualizado em 2026-10-22.
 
 Memória persistente e cifrada no próprio computador, compartilhada entre agentes
 por MCP stdio. Prévia (0.1.1) separada do Server em projeto independente.
-Publicado em https://github.com/vermoraes133/iaddram-local (2026-10-22, prévia 0.1.0). NPM adiado até validar Windows/Linux.
+Publicado em https://github.com/vermoraes133/iaddram-local (2026-10-22; release atual: prévia 0.1.1). NPM adiado até validar Windows/Linux.
 
 ## Componentes
 
