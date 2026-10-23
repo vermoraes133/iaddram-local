@@ -19,6 +19,7 @@
     "zod": "^4.0.0"
   },
   "license": "Apache-2.0",
+  "author": "Mestre dos Cabos",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vermoraes133/iaddram-local.git",

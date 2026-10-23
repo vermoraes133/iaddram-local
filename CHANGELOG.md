@@ -4,7 +4,10 @@ Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versões em
 
 ## [Unreleased]
 
+## [0.1.1] — 2026-10-22
+
 ### Adicionado
+- `iaddram --about` e `--version` com a assinatura do Mestre dos Cabos; campo `author` nos pacotes.
 - CI no GitHub (Node 22/24, Linux/macOS, audit), Dependabot, CODEOWNERS e templates.
 - `CODE_OF_CONDUCT.md` e metadados `repository` nos pacotes.
 

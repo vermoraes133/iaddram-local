@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { StdioServerTransport } from '@modelcontextprotocol/server/stdio';
 import { z } from 'zod';
+import { ABOUT, COMPACT_SIGNATURE, VERSION } from './about.js';
 import { decryptBackup, encryptBackup } from './backup.js';
 import { createLocalMcp } from './mcp.js';
 import { onboard } from './onboard.js';
@@ -28,15 +29,31 @@ async function main() {
       'key-source': { type: 'string', default: 'keyring' },
       'passphrase-stdin': { type: 'boolean', default: false },
       help: { type: 'boolean', default: false },
+      about: { type: 'boolean', default: false },
+      version: { type: 'boolean', default: false },
     },
   });
   if (positionals.length > 1) throw new Error('Unexpected arguments.');
-  const command = values.help ? 'help' : (positionals[0] ?? 'help');
+  const command = values.about
+    ? 'about'
+    : values.version
+      ? 'version'
+      : values.help
+        ? 'help'
+        : (positionals[0] ?? 'help');
   const directory = localDirectory(values.dir);
+  if (command === 'about') {
+    console.log(ABOUT);
+    return;
+  }
+  if (command === 'version') {
+    console.log(`IADDRAM Local ${VERSION}\n${COMPACT_SIGNATURE}`);
+    return;
+  }
   if (command === 'help') {
     console.log('status [--path PROJECT-DIR] [--edition local] [--dir STORAGE-DIR] [--agent NAME]');
     console.log(
-      'IADDRAM Local 0.1.0\ninit | doctor | onboard [--path PROJECT-DIR] [--name NAME] [--project UUID] [--dry-run] | project --name NAME | config --project UUID --agent NAME | mcp --project UUID --agent NAME | export/import --project UUID --file PATH [--passphrase-stdin] | delete --project UUID --id UUID\nOptions: --dir PATH; init --key-source keyring|environment\nMade with ☕ by Mestre dos Cabos',
+      `IADDRAM Local ${VERSION}\n${COMPACT_SIGNATURE}\ninit | doctor | onboard [--path PROJECT-DIR] [--name NAME] [--project UUID] [--dry-run] | project --name NAME | config --project UUID --agent NAME | mcp --project UUID --agent NAME | export/import --project UUID --file PATH [--passphrase-stdin] | delete --project UUID --id UUID\nOptions: --dir PATH; init --key-source keyring|environment\n--about | --version\nMade with ☕ by Mestre dos Cabos`,
     );
     return;
   }

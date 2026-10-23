@@ -69,6 +69,7 @@ await writeFile(
       private: true,
       description: 'Encrypted local memory shared by AI agents through MCP',
       license: 'Apache-2.0',
+      author: 'Mestre dos Cabos',
       type: 'module',
       engines: { node: '>=22 <25' },
       bin: { iaddram: 'dist/cli.js' },
