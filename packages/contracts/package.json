@@ -16,7 +16,7 @@
     "test": "vitest run --dir src"
   },
   "dependencies": {
-    "zod": "^4.0.0"
+    "zod": "^4.6.7"
   },
   "license": "Apache-2.0",
   "author": "Mestre dos Cabos",
