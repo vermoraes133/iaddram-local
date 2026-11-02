@@ -4,6 +4,13 @@ Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versões em
 
 ## [Unreleased]
 
+### Adicionado
+- `docs/threat-model.md` (STRIDE) e seção "Como usar" no README.
+
+### Alterado
+- PGlite 0.5.11, keyring 2.1.2, SDK MCP 2.4.0, Vitest 5.0.5 e `@types/node` 22.20.5.
+  Compatibilidade de dados do PGlite verificada nos dois sentidos e keyring testado no Keychain real.
+
 ## [0.1.2] — 2026-11-02
 
 ### Segurança

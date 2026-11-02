@@ -15,6 +15,59 @@ an IADDRAM account or a hosted API.
 
 Early preview: 0.1.2. Not yet published to the NPM registry; install from a release tarball or from source.
 
+## Como usar
+
+> Para quem vai usar o IADDRAM Local com seus agentes. Para trabalhar no código, veja `docs/tutorials/01-quickstart.md`.
+
+### O que este projeto faz
+
+Dá uma memória própria, cifrada, ao seu computador: o Claude, o Codex e outros agentes que falam MCP
+salvam o que decidiram e continuam de onde o outro parou, sem servidor, conta ou internet.
+
+### Cenário 1 — Começar a usar em um projeto
+
+1. Instale (Node.js 22 ou 24): `npm install -g ./iaddram-local-0.1.2.tgz`, depois `iaddram init`.
+2. Na pasta do projeto: `iaddram onboard --dry-run` para ver o que muda; depois `iaddram onboard`.
+3. Registre o comando MCP que o `onboard` imprime no cliente (Claude, Codex) e reinicie o cliente.
+
+**Resultado:** o agente passa a abrir cada sessão recuperando a última cápsula do projeto.
+
+### Cenário 2 — Passar o trabalho de um agente para outro
+
+1. O primeiro agente salva checkpoints e, ao encerrar, uma cápsula com objetivo, decisões e próximos passos.
+2. O segundo agente, no mesmo projeto, chama `iaddram_start_session` e recebe esse contexto.
+3. `iaddram status` mostra `ready_to_resume` quando há uma cápsula para retomar.
+
+**Resultado:** o segundo agente continua o trabalho sem você recontar o contexto.
+
+### Cenário 3 — Guardar e restaurar um backup
+
+1. `iaddram export --project UUID --file backup.iaddram` (pede uma passphrase de pelo menos 16 caracteres).
+2. Guarde o arquivo e a passphrase em lugares diferentes.
+3. Em outra máquina: `iaddram import --project UUID --file backup.iaddram`.
+
+**Resultado:** suas memórias voltam com a proveniência original.
+
+### Quando NÃO usar este projeto
+
+- Quando várias pessoas precisam compartilhar a mesma memória: não há contas, permissões nem sincronização.
+- Quando você precisa de busca por significado: a busca é textual, sem embeddings.
+- Quando quer guardar segredos: o detector ajuda, mas não pega tudo. Use um gerenciador de senhas.
+- Para sincronizar entre computadores por nuvem: não use uma pasta de nuvem como diretório de dados.
+
+### FAQ rápido
+
+- **Preciso de internet?** Só para instalar. A memória funciona sem rede e não envia telemetria.
+- **E se eu perder a chave do cofre?** Sem a chave nem um backup, os dados não abrem. Nunca apague a entrada `iaddram-local`.
+- **Funciona no Windows e no Linux?** Foi validado no macOS; os cofres dessas plataformas ainda precisam de validação.
+- **O agente vê minhas memórias?** Só as do projeto configurado, e elas seguem para o provedor do modelo como qualquer outro contexto.
+- **Como apago uma memória?** `iaddram delete --project UUID --id MEMORY-UUID`.
+
+### Onde pedir ajuda
+
+- Problemas e dúvidas: https://github.com/vermoraes133/iaddram-local/issues
+- Vulnerabilidades: `SECURITY.md` (relato privado). Modelo de ameaças: `docs/threat-model.md`.
+
 ## Install and run
 
 Requires Node.js 22 or 24 and an unlocked operating-system credential store.
