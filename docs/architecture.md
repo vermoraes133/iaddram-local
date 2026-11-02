@@ -13,7 +13,7 @@ chave fica no cofre nativo do sistema.
 |---|---|
 | `apps/local-cli` | CLI (`init`, `doctor`, `project`, `config`, `onboard`, `status`, backup) e servidor MCP stdio |
 | `packages/memory-kernel` | Regras de escrita e recall, cápsulas, envelope cifrado e HMAC de busca |
-| `packages/storage-pglite` | `MemoryStore` sobre PGlite 0.5.8, com lock por operação |
+| `packages/storage-pglite` | `MemoryStore` sobre PGlite 0.5.11, com lock por operação |
 | `packages/contracts` | Schemas e validações copiados do Server (ADR-0002) |
 | `scripts/package.mjs` | Bundle esbuild instalável, com NOTICE das dependências |
 

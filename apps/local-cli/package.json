@@ -21,8 +21,8 @@
     "@iaddram/memory-kernel": "workspace:*",
     "@iaddram/contracts": "workspace:*",
     "@iaddram/storage-pglite": "workspace:*",
-    "@modelcontextprotocol/server": "2.3.1",
-    "@napi-rs/keyring": "2.0.0",
+    "@modelcontextprotocol/server": "2.4.0",
+    "@napi-rs/keyring": "2.1.2",
     "zod": "^4.6.6"
   },
   "bin": {
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@types/proper-lockfile": "4.1.4",
-    "@modelcontextprotocol/client": "2.3.1"
+    "@modelcontextprotocol/client": "2.4.0"
   },
   "repository": {
     "type": "git",
