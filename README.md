@@ -13,7 +13,7 @@ Persistent, encrypted memory for AI agents on your own computer. Share useful
 checkpoints between compatible MCP clients without a database service, Docker,
 an IADDRAM account or a hosted API.
 
-Early preview: 0.1.1. Not yet published to the NPM registry; install from a release tarball or from source.
+Early preview: 0.1.2. Not yet published to the NPM registry; install from a release tarball or from source.
 
 ## Install and run
 
@@ -24,7 +24,7 @@ Secret Service need platform-specific validation before a stable release.
 With the prepared tarball:
 
 ```sh
-npm install -g ./iaddram-local-0.1.1.tgz
+npm install -g ./iaddram-local-0.1.2.tgz
 iaddram init
 iaddram doctor
 iaddram project --name my-project

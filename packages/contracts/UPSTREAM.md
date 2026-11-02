@@ -10,7 +10,7 @@ nem pacote publicado: o Server é privado e esta edição é Apache-2.0.
 | Commit de origem | `5b2b2465a95138935caad286a656fddb88ffeadb` |
 | Versão de origem | `0.9.0` |
 | Copiado em | 2026-10-18 |
-| Diferenças locais | `package.json`: `license: Apache-2.0`; nenhuma outra |
+| Diferenças locais | `package.json`: `license: Apache-2.0`; `src/secret-scan.ts` endurecido em 2026-11-02 (variantes normalizadas/sem escapes JSON, mais padrões) + `secret-scan.test.ts`. Propor ao Server por inbox/PR |
 
 O Local usa sete símbolos: `assessMemoryQuality`, `buildContextEnvelope`,
 `ContextMemory`, `idempotencyKeySchema`, `memoryWriteSchema`,

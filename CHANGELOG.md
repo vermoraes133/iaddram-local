@@ -4,6 +4,15 @@ Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versões em
 
 ## [Unreleased]
 
+## [0.1.2] — 2026-11-02
+
+### Segurança
+- `scanForSecrets` endurecido: detecta segredos em JSON serializado, normaliza Unicode e remove
+  caracteres invisíveis; novos padrões (Slack, Google, Stripe, npm, JWT, chaves PGP/DSA/criptografadas).
+  Divergência registrada em `packages/contracts/UPSTREAM.md`.
+- zod 4.6.7 (GHSA-mrhx-c7xc-m3w5, esgotamento de memória) e SDK MCP 2.3.1.
+- Dependabot com `cooldown` de 7 dias; majors de TypeScript e `@types/node` ignorados.
+
 ## [0.1.1] — 2026-10-22
 
 ### Adicionado

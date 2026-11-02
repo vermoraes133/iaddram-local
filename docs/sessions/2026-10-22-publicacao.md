@@ -28,3 +28,15 @@ v0.1.1 (atual, prévia).
   login OAuth expirado do cliente; rodar após `/login`.
 - Atualizar o registro do projeto no LIBCODE (`/libcode-sync`), que depende de credenciais do owner.
 - Validar cofres Windows/Linux e decidir NPM antes de uma versão stable.
+
+## Revisão de auditoria — 2026-11-02 (v0.1.2)
+
+- `/sync-mestre` (v2.105.3) + revisão de testes e auditoria (§0.2/§20): semgrep, trivy, gitleaks e
+  cobertura medida em cópia isolada.
+- Achados e correções: zod 4.4.3 (high, GHSA-mrhx-c7xc-m3w5) → 4.6.7; scanner de segredos com
+  bypasses (JSON escapado, tokens Slack/Google/Stripe/npm/JWT, PGP, caractere invisível) → endurecido
+  com 13 testes novos; Dependabot sem `cooldown` → 7 dias; SDK MCP 2.3.1.
+- Branch `agent/manutencao-20261029` (zod ^4.6.6) revisada: correta; a mudança entrou aqui.
+- Dependabot: #2, #3 e #5 absorvidos; #6 (TypeScript 7) fechado; #4 (keyring 2.1.1) adiado até
+  teste com o cofre real.
+- Pendências: threat model (gate #17), seção "Como usar" no README (§0.6.2.1), smoke com cliente real.
