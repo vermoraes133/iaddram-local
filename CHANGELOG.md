@@ -4,6 +4,15 @@ Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versões em
 
 ## [Unreleased]
 
+## [0.1.4] — 2026-11-21
+
+### Corrigido
+- README, Cenário 3: a restauração em outra máquina agora inclui `iaddram init` antes de `iaddram import`
+  (sem configuração nem chave local o `import` falha). Achado da revisão adversarial.
+
+### Testes
+- Novo teste de CLI que segue o caminho documentado de restauração a partir de um diretório vazio.
+
 ## [0.1.3] — 2026-11-20
 
 ### Adicionado

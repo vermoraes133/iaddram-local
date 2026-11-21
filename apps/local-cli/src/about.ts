@@ -1,4 +1,4 @@
-export const VERSION = '0.1.3';
+export const VERSION = '0.1.4';
 
 export const COMPACT_SIGNATURE = '░M░e░s░t░r░e░ ░d░o░s░ ░C░a░b░o░s░';
 

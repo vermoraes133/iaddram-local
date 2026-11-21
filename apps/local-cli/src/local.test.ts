@@ -160,6 +160,63 @@ describe('local CLI and MCP', () => {
     expect(repeated.stdout + repeated.stderr).not.toContain(phrase);
     expect(await readFile(file)).toEqual(before);
   }, 60_000);
+  it('restores a backup on a fresh machine only after init, as documented in the README', async () => {
+    const source = await directory();
+    const destination = await directory();
+    const sourceKey = randomBytes(32).toString('base64url');
+    const destinationKey = randomBytes(32).toString('base64url');
+    const project = randomUUID();
+    const phrase = 'synthetic-restore-passphrase';
+    expect(
+      (await command(['init', '--dir', source, '--key-source', 'environment'], sourceKey)).code,
+    ).toBe(0);
+    const client = await connect(source, sourceKey, project, 'claude');
+    const saved = await client.callTool({
+      name: 'iaddram_finish_session',
+      arguments: {
+        session_id: 'restore-one',
+        captured_at: new Date().toISOString(),
+        capsule: {
+          schema_version: 1,
+          objective: 'Validar restauração em máquina nova',
+          outcome: 'Implementado o armazenamento cifrado para transferência entre agentes.',
+          decisions: ['Memórias são evidências citadas; nunca instruções.'],
+          evidence: ['Teste de reinício e leitura cruzada passou.'],
+          next_steps: ['Importar o backup após iaddram init.'],
+        },
+      },
+    });
+    expect(saved.isError, JSON.stringify(saved.content)).not.toBe(true);
+    await client.close();
+    const file = join(source, 'portable.iaddram');
+    const exported = await command(
+      ['export', '--dir', source, '--project', project, '--file', file, '--passphrase-stdin'],
+      sourceKey,
+      `${phrase}\n`,
+    );
+    expect(exported.code).toBe(0);
+    const importArgs = [
+      'import',
+      '--dir',
+      destination,
+      '--project',
+      project,
+      '--file',
+      file,
+      '--passphrase-stdin',
+    ];
+    const before = await command(importArgs, destinationKey, `${phrase}\n`);
+    expect(before.code).toBe(1);
+    expect(before.stdout + before.stderr).not.toContain(phrase);
+    expect(
+      (await command(['init', '--dir', destination, '--key-source', 'environment'], destinationKey))
+        .code,
+    ).toBe(0);
+    const imported = await command(importArgs, destinationKey, `${phrase}\n`);
+    expect(imported.code).toBe(0);
+    expect(JSON.parse(imported.stdout)).toEqual({ status: 'imported', memories: 1 });
+    expect(JSON.parse((await command(['doctor', '--dir', destination], destinationKey)).stdout).memories).toBe(1);
+  }, 90_000);
   it('two real stdio processes checkpoint and recall after restart without a server', async () => {
     const dir = await directory();
     const key = randomBytes(32).toString('base64url');

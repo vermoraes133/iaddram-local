@@ -13,7 +13,7 @@ Persistent, encrypted memory for AI agents on your own computer. Share useful
 checkpoints between compatible MCP clients without a database service, Docker,
 an IADDRAM account or a hosted API.
 
-Early preview: 0.1.3. Not yet published to the NPM registry; install from a release tarball or from source.
+Early preview: 0.1.4. Not yet published to the NPM registry; install from a release tarball or from source.
 
 ## Como usar
 
@@ -26,7 +26,7 @@ salvam o que decidiram e continuam de onde o outro parou, sem servidor, conta ou
 
 ### Cenário 1 — Começar a usar em um projeto
 
-1. Instale (Node.js 22 ou 24): `npm install -g ./iaddram-local-0.1.3.tgz`, depois `iaddram init`.
+1. Instale (Node.js 22 ou 24): `npm install -g ./iaddram-local-0.1.4.tgz`, depois `iaddram init`.
 2. Na pasta do projeto: `iaddram onboard --dry-run` para ver o que muda; depois `iaddram onboard`.
 3. Registre o comando MCP que o `onboard` imprime no cliente (Claude, Codex) e reinicie o cliente.
 
@@ -44,9 +44,12 @@ salvam o que decidiram e continuam de onde o outro parou, sem servidor, conta ou
 
 1. `iaddram export --project UUID --file backup.iaddram` (pede uma passphrase de pelo menos 16 caracteres).
 2. Guarde o arquivo e a passphrase em lugares diferentes.
-3. Em outra máquina: `iaddram import --project UUID --file backup.iaddram`.
+3. Na outra máquina, instale o IADDRAM Local e rode `iaddram init` (cria a configuração e uma chave nova).
+4. Ainda lá: `iaddram import --project UUID --file backup.iaddram`, com o mesmo UUID do projeto e a passphrase do backup.
 
-**Resultado:** suas memórias voltam com a proveniência original.
+Sem o `iaddram init` o `import` falha, porque ainda não há configuração nem chave local.
+
+**Resultado:** suas memórias voltam com a proveniência original, protegidas pela chave da máquina nova.
 
 ### Quando NÃO usar este projeto
 
@@ -77,7 +80,7 @@ Secret Service need platform-specific validation before a stable release.
 With the prepared tarball:
 
 ```sh
-npm install -g ./iaddram-local-0.1.3.tgz
+npm install -g ./iaddram-local-0.1.4.tgz
 iaddram init
 iaddram doctor
 iaddram project --name my-project
