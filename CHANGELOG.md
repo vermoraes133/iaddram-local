@@ -4,6 +4,8 @@ Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versões em
 
 ## [Unreleased]
 
+## [0.1.3] — 2026-11-20
+
 ### Adicionado
 - `docs/threat-model.md` (STRIDE) e seção "Como usar" no README.
 
