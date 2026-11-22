@@ -4,6 +4,14 @@ Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versões em
 
 ## [Unreleased]
 
+## [0.1.5] — 2026-11-22
+
+### Alterado
+- Instruções do servidor MCP: gravar checkpoint e cápsula não é automático e cabe ao agente; ao fim de uma
+  unidade de trabalho (release, correção, decisão, handoff) ele grava por iniciativa própria, sem esperar
+  pedido nem pedir permissão, e salva uma cápsula nova para a última estar atual.
+  O bloco gerenciado do `onboard` não mudou (alterá-lo exige migração de marcador).
+
 ## [0.1.4] — 2026-11-21
 
 ### Corrigido
